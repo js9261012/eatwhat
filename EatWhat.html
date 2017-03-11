@@ -1,0 +1,61 @@
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+
+<body>
+    
+    <!-- Button trigger modal -->
+    <div align="center">
+        <button type="button" class="btn btn-primary btn-lg" style="margin-top:90" data-toggle="modal" data-target="#myModal" onclick="launchfood();">
+          今天午餐吃什麼？
+        </button>
+        <script>
+            function launchfood() {
+                $("#foodlist").empty();
+                var food = Array('老熊牛肉麵','金口福','福井豬肉麵','忘記什麼店名的水餃店','牯嶺街咖喱飯','越南河粉','小火鍋','麥噹噹','八方雲集');
+                var foodnum = Math.floor(Math.random()*food.length);
+                var d = "<tr><td>" + "今天午餐吃:" + food[foodnum] + "</td><td>"
+                $("#foodlist").append(d);
+            }
+        </script>
+    
+    </div>
+    <div align="center">
+        <button type="button" class="btn btn-primary btn-lg" style="margin-top:180" data-toggle="modal" data-target="#myModal" onclick="dinnerfood();">
+          今天晚餐吃什麼？
+        </button>
+        <script>
+            function dinnerfood() {
+                $("#foodlist").empty();
+                var food = Array('段純貞牛肉麵','台北車站大根堂','麻膳堂');
+                var foodnum = Math.floor(Math.random()*food.length);
+                var d = "<tr><td>" + "今天晚餐吃:" + food[foodnum] + "</td><td>"
+                $("#foodlist").append(d);
+            }
+        </script>
+    </div>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel"></h4>
+      </div>
+      <div class="modal-body" id="foodlist">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
